@@ -5,12 +5,12 @@
 	"description": "",
 	"main": "dist/app.js",
 	"scripts": {
-    "dev": "ts-node src/app.ts",
-    "debug": "DEBUG=true npm run dev",
-    "start": "node dist/app.js",
-    "build": "rimraf dist && tsc && copyfiles -u 1 src/public/**/* dist/public",
-    "bootstrap": "npm ci && npm run build && npm run start"
-  },
+		"dev": "ts-node src/app.ts",
+		"debug": "DEBUG=true npm run dev",
+		"start": "node dist/app.js",
+		"build": "rimraf dist && tsc && copyfiles -u 1 src/public/**/* dist/public",
+		"bootstrap": "npm ci && npm run build && npm run start"
+	},
 	"author": "Songkeys",
 	"license": "ISC",
 	"devDependencies": {
@@ -23,6 +23,7 @@
 		"fastify": "^4.26.2",
 		"puppeteer": "^21.6.0",
 		"puppeteer-extra": "^3.3.6",
-		"puppeteer-extra-plugin-stealth": "^2.11.2"
+		"puppeteer-extra-plugin-stealth": "^2.11.2",
+		"rimraf": "^6.0.1"
 	}
 }
