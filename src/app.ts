@@ -3,13 +3,13 @@ import PagePool from "./browser/pagepool";
 
 const fastify = Fastify({ logger: true });
 
-const { PAGE_COUNT = "5", PORT = "8999" } = process.env;
+// const { PAGE_COUNT = "5", PORT = "8999" } = process.env;
 
 (async () => {
 	console.log("initializing pages...");
 
 	try {
-		await new PagePool(parseInt(PAGE_COUNT, 10)).init();
+		await new PagePool(parseInt(process.env.PAGE_COUNT || 5, 10)).init();
 	} catch (e) {
 		console.log("Failed to initialize pages");
 		console.error(e);
@@ -23,7 +23,7 @@ const { PAGE_COUNT = "5", PORT = "8999" } = process.env;
 
 	try {
 		await fastify.listen({
-			port: Number(PORT),
+			port: Number(process.env.PORT || 5500),
 			host: "0.0.0.0",
 		});
 	} catch (err) {
