@@ -5,12 +5,12 @@
 	"description": "",
 	"main": "dist/app.js",
 	"scripts": {
-		"dev": "ts-node src/app.ts",
-		"debug": "DEBUG=true npm run dev",
-		"start": "node dist/app.js",
-		"build": "rm -rf dist && tsc && cp -R src/public dist/public",
-		"bootstrap": "npm ci && npm run build && npm run start"
-	},
+    "dev": "ts-node src/app.ts",
+    "debug": "DEBUG=true npm run dev",
+    "start": "node dist/app.js",
+    "build": "rimraf dist && tsc && copyfiles -u 1 src/public/**/* dist/public",
+    "bootstrap": "npm ci && npm run build && npm run start"
+  },
 	"author": "Songkeys",
 	"license": "ISC",
 	"devDependencies": {
